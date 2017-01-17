@@ -1,0 +1,7 @@
+[data-griflex-panel] {
+	padding: 5px;
+
+	& > div:not([data-griflex-panel]) {
+		border: 1px solid;
+	}
+}

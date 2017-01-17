@@ -1,0 +1,125 @@
+/* GriFlex
+	Author: Santyago - santyago@xakep.ru (Lodoss Team http://www.lodossteam.com) */
+.griflex-layout {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0; }
+
+.griflex-layout * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@media (min-width: 768px) {
+  .griflex-layout {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2; } }
+@media (min-width: 1200px) {
+  .griflex-layout {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3; } }
+[data-griflex-panel] {
+  padding: 5px; }
+  [data-griflex-panel] > img, [data-griflex-panel] > div:not([data-griflex-panel]) {
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%; }
+  [data-griflex-panel] > img {
+    max-width: 100%;
+    padding: 0; }
+
+@media (min-width: 768px) {
+  [data-griflex-panel] {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid; } }
+[data-griflex-panel~='cluster'] {
+  display: -webkit-box;
+  display: -ms-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0; }
+  [data-griflex-panel~='cluster'][data-griflex-panel~='small'] {
+    height: 200px; }
+  [data-griflex-panel~='cluster'][data-griflex-panel~='medium'] {
+    height: 300px; }
+  [data-griflex-panel~='cluster'][data-griflex-panel~='large'] {
+    height: 400px; }
+  @media (max-width: 768px) {
+    [data-griflex-panel~='cluster'][data-griflex-panel~='small'], [data-griflex-panel~='cluster'][data-griflex-panel~='medium'], [data-griflex-panel~='cluster'][data-griflex-panel~='large'] {
+      overflow: hidden;
+      height: auto; } }
+
+[data-griflex-panel~='segment'] {
+  display: block;
+  width: 100%;
+  height: auto; }
+  @media (min-width: 768px) {
+    [data-griflex-panel~='segment'] {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      display: -webkit-box;
+      display: -ms-box;
+      display: box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex; } }
+  @media (min-width: 768px) {
+    [data-griflex-panel~='segment'][data-griflex-panel~='full-size'] {
+      -webkit-box-flex: 0 0 100%;
+      -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%; }
+    [data-griflex-panel~='segment'][data-griflex-panel~='half-size'] {
+      -webkit-box-flex: 0 0 50%;
+      -webkit-flex: 0 0 50%;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      width: 50%;
+      height: 50%; }
+    [data-griflex-panel~='segment'][data-griflex-panel~='quarter-size'] {
+      -webkit-box-flex: 0 0 25%;
+      -webkit-flex: 0 0 25%;
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      width: 25%;
+      height: 25%; } }
+
+@media (min-width: 768px) {
+  [data-griflex-panel~='stretch-vertical'] {
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+
+  [data-griflex-panel~='stretch-vertical'] [data-griflex-panel~='segment'] {
+    width: 50%; }
+
+  [data-griflex-panel~='stretch-horizontal'] [data-griflex-panel~='segment'] {
+    height: 50%; } }
+
+/*# sourceMappingURL=flex-grid.css.map */

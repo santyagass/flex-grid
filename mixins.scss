@@ -1,0 +1,72 @@
+@mixin flex-box {
+	display: -webkit-box;
+	display: -ms-box;
+	display: box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flex($values) {
+	-webkit-box-flex: $values;
+	-webkit-flex:  $values;
+	-ms-flex:  $values;
+	flex:  $values;
+}
+
+@mixin flex-wrap($wrap-method: wrap) {
+	@if $wrap-method == wrap {
+		-ms-box-lines: multiple;
+		box-lines: multiple;
+	} @else if $wrap-method == wrap-reverse {
+		-ms-box-lines: multiple;
+		box-lines: multiple;
+		-ms-box-direction: reverse;
+		box-direction: reverse;
+	} @else if $wrap-method == nowrap {
+		-ms-box-lines: single;
+		box-lines: single;
+	}
+	-webkit-flex-wrap: $wrap-method;
+	-ms-flex-wrap: $wrap-method;
+	flex-wrap: $wrap-method;
+}
+
+@mixin flex-direction($direction) {
+	@if $direction == row {
+		-ms-box-orient: horizontal;
+		box-orient: horizontal;
+	} @else if $direction == row-reverse {
+		-ms-box-orient: horizontal;
+		box-orient: horizontal;
+		-ms-box-direction: reverse;
+		box-direction: reverse;
+	} @else if $direction == column {
+		-ms-box-orient: vertical;
+		box-orient: vertical;
+	} @else if $direction == column-reverse {
+		-ms-box-orient: vertical;
+		box-orient: vertical;
+		-ms-box-direction: reverse;
+		box-direction: reverse;
+	}
+	-webkit-flex-direction: $direction;
+	-ms-flex-direction: $direction;
+	flex-direction: $direction;
+}
+
+@mixin order($order) {
+	-webkit-box-ordinal-group: $order + 1;
+	-ms-box-ordinal-group: $order + 1;
+	box-ordinal-group: $order + 1;
+	-ms-flex-order: $order;
+	-webkit-order: $order;
+	-ms-order: $order;
+	order: $order;
+}
+
+@mixin column-count($value) {
+	-webkit-column-count: $value;
+	-moz-column-count: $value;
+	column-count: $value;
+}
